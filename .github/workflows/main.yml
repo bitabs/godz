@@ -3,7 +3,6 @@ on:
   push:
     branches:
       - main
-      - integrate-nx
   pull_request:
 
 jobs:
