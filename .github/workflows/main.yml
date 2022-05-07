@@ -20,6 +20,8 @@ jobs:
           node-version: 16.x
           registry-url: 'https://npm.pkg.github.com'
           scope: '@bitabs'
+          always-auth: true
+          check-latest: true
 
       - uses: nrwl/nx-set-shas@v2
       - run: npm ci
