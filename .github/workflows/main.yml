@@ -30,6 +30,7 @@ jobs:
       - name: Check for Semver Label
         run: npx auto pr-check --url $PR
         env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
           PR: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
 
       # Caches PNPM
