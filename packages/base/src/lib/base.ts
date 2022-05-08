@@ -1,3 +1,3 @@
 export function base(): string {
-  return 'base';
+  return 'base test';
 }
