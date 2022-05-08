@@ -47,6 +47,17 @@ jobs:
         with:
           version: latest
 
+      # Create Npmrc
+      - name: Create .npmrc file
+        shell: bash
+        run: |
+          echo "//npm.pkg.github.com/:_authToken=${{ secrets.GH_TOKEN }}" > .npmrc
+          echo "registry = https://registry.npmjs.org/" >> .npmrc
+          echo "@bitabs:registry=https://npm.pkg.github.com/" >> .npmrc
+          echo "email = javastastic@gmail.com" >> .npmrc
+          echo "unsafe-perm = true" >> .npmrc
+          echo "always-auth = true" >> .npmrc
+
       - uses: nrwl/nx-set-shas@v2
 
       # Installs Dependencies

@@ -16,10 +16,9 @@ const allContributorsOptions = {
 
 /** Auto configuration */
 module.exports = {
-  prereleaseBranches: ['alpha'],
+  prereleaseBranches: ['alpha', 'beta', 'rc'],
   plugins: [
-    ['./build/auto/npm/npm.js', npmOptions],
-    // ['npm', npmOptions],
+    ['npm', npmOptions],
     'released',
     ['all-contributors', allContributorsOptions],
   ],
