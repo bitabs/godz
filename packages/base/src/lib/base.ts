@@ -1,3 +1,7 @@
 export function base(): string {
-  return 'base test';
+  return 'base';
+}
+
+export function autoTest(): string {
+  return 'auto test';
 }
