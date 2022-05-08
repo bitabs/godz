@@ -1,3 +1,15 @@
+# v0.1.3 (Sun May 08 2022)
+
+#### 🐛 Bug Fix
+
+- w.i.p: test auto release (#12) [#13](https://github.com/bitabs/godz/pull/13) ([@bitabs](https://github.com/bitabs))
+
+#### Authors: 1
+
+- Naseebullah Safi ([@bitabs](https://github.com/bitabs))
+
+---
+
 # v0.1.2 (Sun May 08 2022)
 
 #### 🐛 Bug Fix

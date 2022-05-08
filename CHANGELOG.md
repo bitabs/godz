@@ -2,6 +2,19 @@
 
 #### 🐛 Bug Fix
 
+- `@bitabs/godz-base@0.1.3`
+  - w.i.p: test auto release (#12) [#13](https://github.com/bitabs/godz/pull/13) ([@bitabs](https://github.com/bitabs))
+
+#### Authors: 1
+
+- Naseebullah Safi ([@bitabs](https://github.com/bitabs))
+
+---
+
+# (Sun May 08 2022)
+
+#### 🐛 Bug Fix
+
 - `@bitabs/godz-base@0.1.2`
   - w.i.p: test auto release (#9) [#10](https://github.com/bitabs/godz/pull/10) ([@bitabs](https://github.com/bitabs))
 
