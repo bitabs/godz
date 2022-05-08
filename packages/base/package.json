@@ -2,6 +2,7 @@
   "name": "@bitabs/godz-base",
   "version": "0.0.1",
   "type": "commonjs",
+  "author": "@bitabs",
   "repository": {
     "type": "git",
     "url": "ssh://git@github.com:bitabs/godz.git",
