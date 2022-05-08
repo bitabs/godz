@@ -1,0 +1,82 @@
+name: CI
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [16.x]
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      # Setups Node
+      - name: Setup node
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@bitabs'
+          always-auth: true
+          check-latest: true
+
+      - name: Check for Semver Label
+        run: npx auto pr-check --url $PR
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          PR: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+
+      # Caches PNPM
+      - name: Cache pnpm modules
+        uses: actions/cache@v2
+        with:
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-
+
+      # Setups PNPM
+      - uses: pnpm/action-setup@v2.0.1
+        with:
+          version: latest
+
+      # Create Npmrc
+      - name: Create .npmrc file
+        shell: bash
+        run: |
+          echo "//npm.pkg.github.com/:_authToken=${{ secrets.GH_TOKEN }}" > .npmrc
+          echo "registry = https://registry.npmjs.org/" >> .npmrc
+          echo "@bitabs:registry=https://npm.pkg.github.com/" >> .npmrc
+          echo "email = javastastic@gmail.com" >> .npmrc
+          echo "unsafe-perm = true" >> .npmrc
+          echo "always-auth = true" >> .npmrc
+
+      - uses: nrwl/nx-set-shas@v2
+
+      # Installs Dependencies
+      - name: Install dependencies
+        run: pnpm install
+
+        # Make sure we have all branches
+      - name: Fetch other branches
+        run: git fetch --no-tags --prune --depth=5 origin main
+
+      - run: npx nx workspace-lint
+      - run: npx nx format:check
+      - run: npx nx affected --target=lint --parallel=3
+      - run: npx nx affected --target=test --parallel=3 --ci --code-coverage
+      - run: npx nx affected --target=build --parallel=3
+
+      - name: Create Release
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          npx auto shipit -vv
