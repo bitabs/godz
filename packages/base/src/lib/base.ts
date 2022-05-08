@@ -3,5 +3,5 @@ export function base(): string {
 }
 
 export function autoTest(): string {
-  return 'auto test';
+  return 'auto test foo';
 }
