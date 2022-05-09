@@ -1,6 +1,8 @@
 {
   "version": 2,
   "projects": {
-    "base": "packages/base"
+    "godz-base": "packages/godz-base",
+    "godz-core": "packages/godz-core",
+    "godz-types": "packages/godz-types"
   }
 }
