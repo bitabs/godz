@@ -15,7 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@godz/base": ["packages/base/src/index.ts"]
+      "@bitabs/godz-base": ["packages/godz-base/src/index.ts"],
+      "@bitabs/godz-types": ["packages/godz-types/src/index.ts"],
+      "@bitabs/godz-core": ["packages/godz-core/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -1,0 +1,14 @@
+{
+  "name": "@bitabs/godz-core",
+  "version": "0.0.1",
+  "author": "@bitabs",
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com:bitabs/godz.git",
+    "directory": "packages/godz-core"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://npm.pkg.github.com"
+  }
+}
