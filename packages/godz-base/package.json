@@ -1,0 +1,15 @@
+{
+  "name": "@bitabs/godz-base",
+  "version": "0.0.1",
+  "type": "commonjs",
+  "author": "@bitabs",
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com:bitabs/godz.git",
+    "directory": "packages/godz-base"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://npm.pkg.github.com"
+  }
+}
