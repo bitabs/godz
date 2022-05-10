@@ -28,6 +28,7 @@
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
+        "ignorePath": "packages/godz-base/.eslintignore",
         "lintFilePatterns": ["packages/godz-base/**/*.{ts,tsx,js,jsx}"]
       }
     },
