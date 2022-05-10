@@ -11,6 +11,11 @@
     "access": "public",
     "registry": "https://npm.pkg.github.com"
   },
+  "dependencies": {
+    "@stitches/react": "^1.2.8",
+    "react": "18.1.0",
+    "react-dom": "18.1.0"
+  },
   "main": "./dist/index.umd.js",
   "module": "./dist/index.esm.js",
   "types": "./dist/index.d.ts",
