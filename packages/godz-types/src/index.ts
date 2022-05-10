@@ -1,4 +1,4 @@
-import type { ComponentProps } from '@stitches/react'
+import type * as Stitches from '@stitches/react'
 import type {
   CssComponent,
   StyledComponent,
@@ -20,7 +20,7 @@ export interface CompositionProps<C = Record<string, unknown>> {
 
 export type Component<
   // The Component from whose props are derived
-  C extends ComponentProps<unknown>,
+  C extends Stitches.ComponentProps<unknown>,
   // The other props added by the template
   O extends object = Record<string, unknown>,
   // The props that are made optional by .attrs

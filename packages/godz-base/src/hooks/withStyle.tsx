@@ -12,7 +12,7 @@ export function withStyle<P, S, C = unknown>(
     React.PropsWithRef<unknown> & { className?: string }
 > {
   const component = forwardRef<HTMLElement, P & C>((props: any, ref) => (
-    <Component ref={ref} {...props} styled={Components} />
+    <Component ref={ref} styled={Components} {...props} />
   ))
 
   component.displayName =

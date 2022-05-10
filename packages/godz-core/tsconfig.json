@@ -4,6 +4,7 @@
     "jsx": "react-jsx",
     "allowJs": true,
     "esModuleInterop": true,
+    "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
@@ -18,7 +19,8 @@
       "@bitabs/godz-core": ["packages/godz-core/src/index.ts"],
 
       // @local
-      "@theme": ["packages/godz-core/src/theme"]
+      "@theme": ["packages/godz-core/src/theme"],
+      "@styles": ["packages/godz-core/src/styles"]
     }
   },
   "files": [],
