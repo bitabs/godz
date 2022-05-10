@@ -11,6 +11,18 @@ export interface ButtonPublicProps {
    */
   label?: string
   /**
+   * True if the button is in disabled state, false otherwise
+   */
+  disabled?: boolean
+  /**
+   * It prevents the user from clicking
+   */
+  readOnly?: boolean
+  /**
+   * -1 if the input is not keyboard accessible, index in the sequential keyboard navigation otherwise
+   */
+  tabIndex?: number
+  /**
    * Handler when the button is clicked
    */
   onClick?: (event: React.MouseEvent) => void
@@ -18,6 +30,18 @@ export interface ButtonPublicProps {
    * Handler when the button loses the focus.
    */
   onBlur?: (event: React.FocusEvent) => void
+  /**
+   * Handler when the button gets the focus.
+   */
+  onFocus?: (event: React.FocusEvent) => void
+  /**
+   * Handler when the button is hovered
+   */
+  onHover?: (event: React.MouseEvent) => void
+  /**
+   * Handler when the button is not hovered
+   */
+  onLeave?: (event: React.MouseEvent) => void
 }
 
 export interface ButtonProps
