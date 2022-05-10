@@ -7,13 +7,14 @@
       "executor": "@nrwl/web:rollup",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/packages/godz-core",
+        "outputPath": "packages/godz-core/dist",
         "tsConfig": "packages/godz-core/tsconfig.lib.json",
         "project": "packages/godz-core/package.json",
         "entryFile": "packages/godz-core/src/index.ts",
         "external": ["react/jsx-runtime"],
         "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
         "compiler": "babel",
+        "format": ["esm", "umd", "cjs"],
         "assets": [
           {
             "glob": "packages/godz-core/README.md",
