@@ -12,10 +12,12 @@
     "access": "public",
     "registry": "https://npm.pkg.github.com"
   },
-  "main": "../../dist/packages/godz-base/index.umd.js",
-  "module": "../../dist/packages/godz-base/index.esm.js",
-  "types": "../../dist/packages/godz-base/index.d.ts",
+  "main": "./dist/index.umd.js",
+  "module": "./dist/index.esm.js",
+  "types": "./dist/index.d.ts",
   "files": [
-    "../../dist/packages/godz-base/*"
+    "CHANGELOG.md",
+    "dist",
+    "README.md"
   ]
 }
