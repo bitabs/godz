@@ -12,17 +12,10 @@
     "access": "public",
     "registry": "https://npm.pkg.github.com"
   },
-  "exports": {
-    ".": {
-      "require": "./../../dist/packages/godz-base/index.cjs.js",
-      "import": "./../../dist/packages/godz-base/index.esm.js"
-    }
-  },
-  "main": "./../../dist/packages/godz-base/index.umd.js",
-  "module": "./../../dist/packages/godz-base/index.esm.js",
-  "types": "./../../dist/packages/godz-base/index.d.ts",
-  "typings": "./../../dist/packages/godz-base/index.d.ts",
+  "main": "../../dist/packages/godz-base/index.umd.js",
+  "module": "../../dist/packages/godz-base/index.esm.js",
+  "types": "../../dist/packages/godz-base/index.d.ts",
   "files": [
-    "../../dist/packages/godz-base/**"
+    "../../dist/packages/godz-base/*"
   ]
 }
