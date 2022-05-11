@@ -1,3 +1,4 @@
+const path = require('path')
 const rootMain = require('../../../.storybook/main')
 
 module.exports = {
@@ -15,6 +16,11 @@ module.exports = {
     // apply any global webpack configs that might have been specified in .storybook/main.js
     if (rootMain.webpackFinal) {
       config = await rootMain.webpackFinal(config, { configType })
+    }
+
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      '@godz-base': 'packages/godz-base/src',
     }
 
     // add your own webpack tweaks if needed
