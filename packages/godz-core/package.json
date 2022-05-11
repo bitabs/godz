@@ -19,10 +19,7 @@
     "dist",
     "README.md",
     "!dist/**/stories",
-    "!dist/**/stories/*",
     "!dist/**/styles",
-    "!dist/**/styles/*",
-    "!dist/theme",
-    "!dist/theme/*"
+    "!dist/**/theme"
   ]
 }
