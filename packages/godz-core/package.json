@@ -18,6 +18,11 @@
     "CHANGELOG.md",
     "dist",
     "README.md",
-    "!dist/**/(stories|styles|theme)"
+    "!dist/**/stories",
+    "!dist/**/stories/*",
+    "!dist/**/styles",
+    "!dist/**/styles/*",
+    "!dist/theme",
+    "!dist/theme/*"
   ]
 }
