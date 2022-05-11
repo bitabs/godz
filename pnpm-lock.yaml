@@ -126,24 +126,10 @@ importers:
       webpack: 5.72.1
 
   packages/godz-base:
-    specifiers:
-      '@stitches/react': ^1.2.8
-      react: 18.1.0
-      react-dom: 18.1.0
-    dependencies:
-      '@stitches/react': 1.2.8_react@18.1.0
-      react: 18.1.0
-      react-dom: 18.1.0_react@18.1.0
+    specifiers: {}
 
   packages/godz-core:
-    specifiers:
-      '@stitches/react': ^1.2.8
-      react: 18.1.0
-      react-dom: 18.1.0
-    dependencies:
-      '@stitches/react': 1.2.8_react@18.1.0
-      react: 18.1.0
-      react-dom: 18.1.0_react@18.1.0
+    specifiers: {}
 
   packages/godz-types:
     specifiers: {}
