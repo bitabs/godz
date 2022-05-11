@@ -17,6 +17,7 @@
   "files": [
     "CHANGELOG.md",
     "dist",
-    "README.md"
+    "README.md",
+    "!dist/**/(stories|styles|theme)"
   ]
 }
