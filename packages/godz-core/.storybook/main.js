@@ -1,4 +1,10 @@
+const { addons } = require('@storybook/addons')
+const { default: Dark } = require('./theme/storybook.theme.dark')
 const rootMain = require('../../../.storybook/main')
+
+addons.setConfig({
+  theme: Dark,
+})
 
 module.exports = {
   ...rootMain,

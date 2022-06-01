@@ -1,25 +1,21 @@
-// @packages: components
-import {
-  /** Types */
-  Button,
-  ButtonPublicProps,
-  ButtonComponents,
-  /** hooks */
-  withStyle,
-} from '@bitabs/godz-base'
+// @core
+import * as Base from '@bitabs/godz-base'
 
 // @styles
-import Styles from './styles'
+import styles from './styles'
 
-export interface CoreButtonPublicProps extends ButtonPublicProps {
+export interface CoreButtonPublicProps extends Base.ButtonPublicProps {
   outlined?: boolean
   contained?: boolean
 }
 
 export type CoreButtonProps = CoreButtonPublicProps
 
-export const CoreButton = withStyle<CoreButtonPublicProps, ButtonComponents>(
-  Button /** Component we want to manipulate */,
-  Styles /** The styles we want to aggregate */,
-  'CoreButton' /** The name we want to apply */
+export const CoreButton = Base.createComponent<
+  CoreButtonPublicProps,
+  Base.ButtonComponents
+>(
+  Base.Button /** Actual component */,
+  styles /** Main styles */,
+  'CoreButton' /** Name of the component */
 )

@@ -7,7 +7,7 @@
       "executor": "@nrwl/web:rollup",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/packages/godz-types",
+        "outputPath": "packages/godz-types/dist",
         "tsConfig": "packages/godz-types/tsconfig.lib.json",
         "project": "packages/godz-types/package.json",
         "entryFile": "packages/godz-types/src/index.ts",

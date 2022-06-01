@@ -1,17 +1,23 @@
 import React, { forwardRef } from 'react'
 
-export function withStyle<P, S, C = unknown>(
-  Component:
-    | React.ComponentClass<any>
-    | React.FunctionComponent<any>
-    | React.ForwardRefExoticComponent<any>,
-  Components: S,
-  name?: string
-): React.ForwardRefExoticComponent<
-  React.PropsWithoutRef<P & C> &
+type Component =
+  | React.ComponentClass<any>
+  | React.FunctionComponent<any>
+  | React.ForwardRefExoticComponent<any>
+
+type Name = string
+
+type ReturnType<Props, Ctx> = React.ForwardRefExoticComponent<
+  React.PropsWithoutRef<Props & Ctx> &
     React.PropsWithRef<unknown> & { className?: string }
-> {
-  const component = forwardRef<HTMLElement, P & C>((props: any, ref) => (
+>
+
+export default function createComponent<Props, Style, Ctx = unknown>(
+  Component: Component,
+  Components: Style,
+  name?: Name
+): ReturnType<Props, Ctx> {
+  const component = forwardRef<HTMLElement, Props & Ctx>((props: any, ref) => (
     <Component ref={ref} styled={Components} {...props} />
   ))
 

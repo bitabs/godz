@@ -1,5 +1,4 @@
-import { CSS } from '@stitches/react'
-import { css, theme } from '@theme'
+import type { CSS } from '@theme'
 
 /** Readonly */
 export const readOnly: CSS = {
@@ -11,5 +10,5 @@ export const readOnly: CSS = {
 /** Base styles */
 export const disabled: CSS = {
   ...readOnly,
-  opacity: theme.opacity.disabled,
+  opacity: 0.3,
 }

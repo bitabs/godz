@@ -1,8 +1,10 @@
 import type { ButtonComponents } from '@bitabs/godz-base'
-import { Root } from './button.styles.root'
+import Root from './core.button.styles.root'
+import Start from './core.button.styles.start'
+import End from './core.button.styles.end'
 
-const Components: ButtonComponents = {
+export default {
   Root,
-}
-
-export default Components
+  Start,
+  End,
+} as ButtonComponents

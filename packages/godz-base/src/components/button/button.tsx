@@ -1,4 +1,4 @@
-import React, { forwardRef, Ref } from 'react'
+import React from 'react'
 import {
   attachIf,
   isActionable,
@@ -7,17 +7,17 @@ import {
 } from '@godz-base/utils'
 import { ButtonProps } from './button.typings'
 
-export const Button = forwardRef(
-  (props: ButtonProps, forwardRef: Ref<HTMLButtonElement>) => {
-    const { id, onFocus, onBlur, onHover, onLeave, ...rest } = props
+export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  (props, ref) => {
+    const { id, styled, onFocus, onBlur, onHover, onLeave, ...rest } = props
 
-    // components
-    const { Root } = props.styled
+    const { Root, Start, End } = styled
 
     const tabIndex = !isActionable(props) ? -1 : props.tabIndex
 
-    const attach = (handler?: (e: any) => void) =>
-      attachIf(isActionable(props), handler)
+    const attach = (handler?: (e: any) => void) => {
+      return attachIf(isActionable(props), handler)
+    }
 
     const handleClick = (event: React.MouseEvent) => {
       event.preventDefault()
@@ -28,13 +28,17 @@ export const Button = forwardRef(
       }
     }
 
-    const renderLabel = () => {
-      return props.label
+    const renderStart = () => {
+      return props.start && <Start>{props.start}</Start>
+    }
+
+    const renderEnd = () => {
+      return props.end && <End>{props.end}</End>
     }
 
     return (
       <Root
-        ref={forwardRef}
+        ref={ref}
         id={props.id}
         tabIndex={tabIndex}
         onClick={attach(handleClick)}
@@ -45,7 +49,9 @@ export const Button = forwardRef(
         {...getAttributes(props, DataAttributesPrefix)}
         {...rest}
       >
-        {renderLabel()}
+        {renderStart()}
+        {props.children}
+        {renderEnd()}
       </Root>
     )
   }

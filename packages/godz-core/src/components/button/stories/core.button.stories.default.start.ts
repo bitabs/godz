@@ -4,19 +4,14 @@ import { Template } from './core.button.template'
 
 export default {
   component: CoreButton,
-  title: 'components/@atoms/button/contained',
+  title: 'components/@atoms/button/default',
   args: {
     children: 'Submit',
-    contained: true,
   },
 } as Meta
 
 /** Default */
-export const Default = Template.bind({})
-Default.args = {}
-
-/** Disabled */
-export const Disabled = Template.bind({})
-Disabled.args = {
-  disabled: true,
+export const Start = Template.bind({})
+Start.args = {
+  start: 'Hello',
 }

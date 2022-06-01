@@ -7,11 +7,8 @@ export interface ButtonPublicProps {
    */
   id?: string
   /**
-   * The label of the button
-   */
-  label?: string
-  /**
-   * True if the button is in disabled state, false otherwise
+   * True if the button is in disabled state,
+   * false otherwise
    */
   disabled?: boolean
   /**
@@ -19,9 +16,23 @@ export interface ButtonPublicProps {
    */
   readOnly?: boolean
   /**
-   * -1 if the input is not keyboard accessible, index in the sequential keyboard navigation otherwise
+   * -1 if the input is not keyboard accessible,
+   * index in the sequential keyboard navigation
+   * otherwise
    */
   tabIndex?: number
+  /**
+   * Element placed before the children
+   */
+  start?: React.ReactNode
+  /**
+   * Element placed after the children
+   */
+  end?: React.ReactNode
+  /**
+   * The content of the component
+   */
+  children?: React.ReactNode
   /**
    * Handler when the button is clicked
    */
