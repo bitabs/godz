@@ -85,6 +85,14 @@
     "webpack": "^5.72.0"
   },
   "packageManager": "pnpm@7.0.1",
+  "pnpm": {
+    "peerDependencyRules": {
+      "allowedVersions": {
+        "react": "18",
+        "react-dom": "18"
+      }
+    }
+  },
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org"
