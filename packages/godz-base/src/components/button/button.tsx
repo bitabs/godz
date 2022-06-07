@@ -4,6 +4,7 @@ import {
   isActionable,
   getAttributes,
   DataAttributesPrefix,
+  getTestId,
 } from '@godz-base/utils'
 import { ButtonProps } from './button.typings'
 
@@ -29,11 +30,15 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     }
 
     const renderStart = () => {
-      return props.start && <Start>{props.start}</Start>
+      return (
+        props.start && (
+          <Start {...getTestId(props, 'start')}>{props.start}</Start>
+        )
+      )
     }
 
     const renderEnd = () => {
-      return props.end && <End>{props.end}</End>
+      return props.end && <End {...getTestId(props, 'end')}>{props.end}</End>
     }
 
     return (

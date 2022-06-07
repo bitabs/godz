@@ -22,6 +22,7 @@ importers:
       '@nrwl/web': 14.1.4
       '@nrwl/workspace': 14.1.4
       '@octokit/core': ^3.6.0
+      '@stitches/react': ^1.2.8
       '@storybook/addon-essentials': ~6.4.22
       '@storybook/addons': ^6.4.22
       '@storybook/builder-webpack5': ~6.4.22
@@ -49,6 +50,7 @@ importers:
       eslint-plugin-jsx-a11y: 6.5.1
       eslint-plugin-react: 7.29.4
       eslint-plugin-react-hooks: 4.5.0
+      framer-motion: ^6.3.3
       jest: 27.5.1
       nx: 14.1.4
       prettier: ^2.6.2
@@ -56,6 +58,7 @@ importers:
       react-dom: ^18.1.0
       react-test-renderer: 18.1.0
       regenerator-runtime: 0.13.7
+      storybook-dark-mode: ^1.1.0
       ts-jest: 27.1.4
       ts-node: 9.1.1
       tsconfig-paths: ^4.0.0
@@ -65,6 +68,8 @@ importers:
       url-loader: ^3.0.0
       webpack: ^5.72.0
     dependencies:
+      '@stitches/react': 1.2.8_react@18.1.0
+      framer-motion: 6.3.3_ef5jwxihqo6n7gxfmzogljlgcm
       react: 18.1.0
       react-dom: 18.1.0_react@18.1.0
     devDependencies:
@@ -118,6 +123,7 @@ importers:
       prettier: 2.6.2
       react-test-renderer: 18.1.0_react@18.1.0
       regenerator-runtime: 0.13.7
+      storybook-dark-mode: 1.1.0_3rqeopuyaxlbqxnvmyxhilnix4
       ts-jest: 27.1.4_f7x67eiiqqfrkhc2csocqqthsi
       ts-node: 9.1.1_typescript@4.6.4
       tsconfig-paths: 4.0.0
@@ -129,9 +135,15 @@ importers:
 
   packages/godz-base:
     specifiers:
+      '@stitches/react': ^1.2.8
+      framer-motion: ^6.3.3
       react: ^18.1.0
+      react-dom: ^18.1.0
     dependencies:
+      '@stitches/react': 1.2.8_react@18.1.0
+      framer-motion: 6.3.3_ef5jwxihqo6n7gxfmzogljlgcm
       react: 18.1.0
+      react-dom: 18.1.0_react@18.1.0
 
   packages/godz-core:
     specifiers:
@@ -13769,7 +13781,7 @@ packages:
     dev: true
 
   /map-or-similar/1.5.0:
-    resolution: {integrity: sha1-beJlMXSt+12e3DPGnT6Sobdvrwg=}
+    resolution: {integrity: sha512-0aF7ZmVon1igznGI4VS30yugpduQW3y3GkcgGJOp7d8x8QrizhigUxjI/m2UojsXXto+jLAH3KSz+xOJTiORjg==}
     dev: true
 
   /map-visit/1.0.0:
@@ -13866,7 +13878,7 @@ packages:
     dev: true
 
   /memoizerific/1.11.3:
-    resolution: {integrity: sha1-fIekZGREwy11Q4VwkF8tvRsagFo=}
+    resolution: {integrity: sha512-/EuHYwAPdLtXwAwSZkh/Gutery6pD2KYd44oQLhAvQp/50mpyduZh8Q7PYHXTCJ+wuXxt7oij2LXyIJOOYFPog==}
     dependencies:
       map-or-similar: 1.5.0
     dev: true
@@ -17240,6 +17252,21 @@ packages:
 
   /store2/2.13.2:
     resolution: {integrity: sha512-CMtO2Uneg3SAz/d6fZ/6qbqqQHi2ynq6/KzMD/26gTkiEShCcpqFfTHgOxsE0egAq6SX3FmN4CeSqn8BzXQkJg==}
+    dev: true
+
+  /storybook-dark-mode/1.1.0_3rqeopuyaxlbqxnvmyxhilnix4:
+    resolution: {integrity: sha512-F+hG02zYGBzxGTUonA1XDV/CtMYm3OjF38Tu1CIUN+w+8hwUrwLcOtgtLLw6VjSrZdJ/ECK+tjXdKTV4oZqAXw==}
+    peerDependencies:
+      '@storybook/addons': ^6.0.0
+      '@storybook/api': ^6.0.0
+      '@storybook/components': ^6.0.0
+      '@storybook/core-events': ^6.0.0
+      '@storybook/theming': ^6.0.0
+    dependencies:
+      '@storybook/addons': 6.4.22_ef5jwxihqo6n7gxfmzogljlgcm
+      '@storybook/theming': 6.4.22_ef5jwxihqo6n7gxfmzogljlgcm
+      fast-deep-equal: 3.1.3
+      memoizerific: 1.11.3
     dev: true
 
   /stream-browserify/2.0.2:
