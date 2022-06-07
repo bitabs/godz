@@ -1,1 +1,2 @@
-export * from './core.theme'
+export * from './core.theme.light'
+export * from './core.theme.dark'

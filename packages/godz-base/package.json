@@ -1,7 +1,6 @@
 {
   "name": "@bitabs/godz-base",
   "version": "0.0.2",
-  "type": "commonjs",
   "author": "@bitabs",
   "repository": {
     "type": "git",
@@ -11,5 +10,23 @@
   "publishConfig": {
     "access": "public",
     "registry": "https://npm.pkg.github.com"
-  }
+  },
+  "main": "./dist/index.umd.js",
+  "module": "./dist/index.esm.js",
+  "types": "./dist/index.d.ts",
+  "dependencies": {
+    "@stitches/react": "^1.2.8",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0"
+  },
+  "peerDependencies": {
+    "framer-motion": "^6.x",
+    "react": "^18.x",
+    "react-dom": "^18.x"
+  },
+  "files": [
+    "CHANGELOG.md",
+    "dist",
+    "README.md"
+  ]
 }

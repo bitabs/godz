@@ -1,1 +1,1 @@
-export * from './button.stories'
+export * from './core.button.stories.default'

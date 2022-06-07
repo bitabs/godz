@@ -7,10 +7,21 @@
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
+    "strictNullChecks": false,
+    "lib": ["ESNext", "DOM"],
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    "paths": {
+      // @root
+      "@bitabs/godz-base": ["packages/godz-base/src/index.ts"],
+      "@bitabs/godz-types": ["packages/godz-types/src/index.ts"],
+      "@bitabs/godz-core": ["packages/godz-core/src/index.ts"],
+
+      // @local
+      "@godz-base/utils": ["packages/godz-base/src/utils"]
+    }
   },
   "files": [],
   "include": [],

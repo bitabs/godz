@@ -1,1 +1,1 @@
-export { withStyle } from './withStyle'
+export { default as createComponent } from './withStyle'

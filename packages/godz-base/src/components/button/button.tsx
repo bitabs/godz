@@ -1,17 +1,62 @@
-import { forwardRef, Ref } from 'react'
+import React from 'react'
+import {
+  attachIf,
+  isActionable,
+  getAttributes,
+  DataAttributesPrefix,
+  getTestId,
+} from '@godz-base/utils'
 import { ButtonProps } from './button.typings'
 
-export const Button = forwardRef(
-  (props: ButtonProps, forwardRef: Ref<HTMLButtonElement>) => {
-    const { Root } = props.styled
+export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  (props, ref) => {
+    const { id, styled, onFocus, onBlur, onHover, onLeave, ...rest } = props
 
-    const renderLabel = () => {
-      return props.label
+    const { Root, Start, End } = styled
+
+    const tabIndex = !isActionable(props) ? -1 : props.tabIndex
+
+    const attach = (handler?: (e: any) => void) => {
+      return attachIf(isActionable(props), handler)
+    }
+
+    const handleClick = (event: React.MouseEvent) => {
+      event.preventDefault()
+      event.stopPropagation()
+
+      if (props.onClick) {
+        props.onClick(event)
+      }
+    }
+
+    const renderStart = () => {
+      return (
+        props.start && (
+          <Start {...getTestId(props, 'start')}>{props.start}</Start>
+        )
+      )
+    }
+
+    const renderEnd = () => {
+      return props.end && <End {...getTestId(props, 'end')}>{props.end}</End>
     }
 
     return (
-      <Root ref={forwardRef} id={props.id}>
-        {renderLabel()}
+      <Root
+        ref={ref}
+        id={props.id}
+        tabIndex={tabIndex}
+        onClick={attach(handleClick)}
+        onFocus={attach(props.onFocus)}
+        onBlur={attach(props.onBlur)}
+        onMouseEnter={attach(props.onHover)}
+        onMouseLeave={attach(props.onLeave)}
+        {...getAttributes(props, DataAttributesPrefix)}
+        {...rest}
+      >
+        {renderStart()}
+        {props.children}
+        {renderEnd()}
       </Root>
     )
   }
